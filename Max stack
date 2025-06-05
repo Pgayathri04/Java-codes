@@ -1,14 +1,11 @@
 import java.util.Stack;
-
 public class MaxStack {
     private Stack<Integer> stack;
     private Stack<Integer> maxStack;
-
     public MaxStack() {
         stack = new Stack<>();
         maxStack = new Stack<>();
     }
-
     public void push(int val) {
         stack.push(val);
         if (maxStack.isEmpty()) {
@@ -17,16 +14,13 @@ public class MaxStack {
             maxStack.push(Math.max(val, maxStack.peek()));
         }
     }
-
     public void pop() {
         stack.pop();
         maxStack.pop();
     }
-
     public int top() {
         return stack.peek();
     }
-
     public int getMax() {
         return maxStack.peek();
     }
