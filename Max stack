@@ -14,6 +14,7 @@ public class MaxStack {
             maxStack.push(Math.max(val, maxStack.peek()));
         }
     }
+
     public void pop() {
         stack.pop();
         maxStack.pop();
@@ -23,5 +24,15 @@ public class MaxStack {
     }
     public int getMax() {
         return maxStack.peek();
+    }
+    public static void main(String[] args) {
+        MaxStack maxStack = new MaxStack();
+        maxStack.push(1);
+        maxStack.push(3);
+        maxStack.push(2);
+        System.out.println(maxStack.getMax()); // 3
+        maxStack.pop();
+        System.out.println(maxStack.top());    // 3
+        System.out.println(maxStack.getMax()); // 3
     }
 }
